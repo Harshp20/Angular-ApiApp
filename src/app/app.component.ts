@@ -13,7 +13,7 @@ export class AppComponent {
 
   category=''
   name=''
-  public foundData: any= [];
+  foundData: any = false;
 
   private apiData: any = []
 
@@ -30,7 +30,7 @@ export class AppComponent {
     this.apiData.find((vehicle:any)=>{
 
       if(vehicle.name === this.name)
-        this.foundData.push(vehicle)
+        this.foundData = vehicle
 
     })
 

@@ -14,15 +14,15 @@
 <br>
 <br>
 
-<span *ngIf="foundData.length == 0 && dname.touched">Not Found</span>
-<div *ngIf="foundData.length">
+<span *ngIf="!foundData && dname.touched">Not Found</span>
+<div *ngIf="foundData">
   <ul>
     <li>
-        {{foundData[0].name}}
+        {{foundData.name}}
       </li>
 
       <li>
-        {{foundData[0].created}}
+        {{foundData.created}}
       </li>
     </ul>
 </div>

@@ -1,0 +1,33 @@
+<form  >
+  <!-- dropdown -->
+  Select a category from the dropdown list:
+  <select name="dropdown" [(ngModel)]="category" name="category" value="Select One">
+    <option value="people">People</option>
+    <option value="vehicles">Vehicles</option>
+  </select>
+
+  <!-- Search box -->
+  <input style="margin: 10px;"  #dname="ngModel" [(ngModel)]="name" name="name" type="text" placeholder="Search name here">
+
+  <button type="submit" (click)="search()">Search</button>
+
+<br>
+<br>
+
+<span *ngIf="foundData.length == 0 && dname.touched">Not Found</span>
+<div *ngIf="foundData.length">
+  <ul>
+    <li>
+        {{foundData[0].name}}
+      </li>
+
+      <li>
+        {{foundData[0].created}}
+      </li>
+    </ul>
+</div>
+
+</form>
+
+
+
